@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/screen.css">
+</head>
+
+<body>
+    <div class="error">OH,no!你今天还没有来慕课网学习哦。</div>
+    <div class="serous-error">OH,no!你一周都没有来慕课网学习啦。</div>
+    <span>这里serious-error的样式包含有error的样式，即是error样式的拓展。平时也可以这样写：class="error serious-error"，但这样不易维护，因为写serious-error的样式就必须加上error的样式；而且这也不符合标签语法的规则：error代表颜色时color=#f00; serious-error代表颜色：color=#f00;border=1px #f00 solid;如果之后需要修改error的颜色，那还的找到serious-error再进行修改。所以这时就用到了继承。即：serious-error:{ @extend .error; border:1px #f00 solid;}</span>
+</body>
+
+</html>

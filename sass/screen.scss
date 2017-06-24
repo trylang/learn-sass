@@ -1,0 +1,129 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// @import "compass/reset";
+@import "mixin",
+"veriables";
+// @import "normalize"; //normalize 与 reset 模块差不多，这里将reset注释掉
+
+/* normalize模块中的version,如果需要引入normalize子模块，就需要先引入-version */
+
+@import "normalize-version";
+
+/* normalize模块中的base */
+
+@import "normalize/base";
+
+/* normalize模块中的html5 */
+
+@import "normalize/html5";
+
+/* normalize模块中的links */
+
+@import "normalize/links";
+.headline {
+    font-family: $headline-ff; // 1.变量声明必须提前，否则接收不到；
+}
+
+.main-sec {
+    font-family: $main-sec-ff;
+}
+
+
+/*.main-sec {
+    .headline {
+        @include height();
+        font: {
+            family: $headline-ff;
+            size: 12px;
+        }
+    }
+    font: {
+        family: $main-sec-ff;
+        size: 16px;
+    }
+}*/
+
+//10. 使用@at-root指令调整层级嵌套，上面被注释掉的嵌套代码使用@at-root，写成无嵌套关系的代码
+.main-sec {
+    font: {
+        family: $main-sec-ff;
+        size: 16px;
+    }
+    @at-root {
+        .main-sec-headline {
+            //独立
+            @include height();
+            font: {
+                family: $headline-ff;
+                size: 12px;
+            }
+        }
+        .main-sec-detail {
+            //独立
+            @include height(20px);
+        }
+    }
+    .main-sec-detail1 {
+        //仍以组合嵌套的方式
+        @include height(21px);
+    }
+}
+
+// 2.如此写超链接的hover样式，就相当于 a*:hover{},即a下面的所有子元素拥有的hover效果
+a {
+    :hover {
+        color: blue;
+    }
+}
+
+//3. &为父类选择器。
+a {
+    &:hover {
+        color: blue;
+    }
+}
+
+.webdemo-sec {
+    @include col-6();
+    @include height(30px);
+}
+
+//5. 但极其不建议这么做，因为会表意不清。再者，这里不能单独引用@include col-6()，会报错，是因为col-6没有需展示的元素，
+//且这里不像less，less调用函数时，若没有参数可直接不写俩括号，sass里不可以。
+@include col-6-1();
+//6. 语义化定义名称：
+.error {
+    color: #f00;
+}
+
+//7. 使用继承方式，如此之需要被继承项一处修改即可。可实现多个继承。
+.serous-error {
+    // @extend .error;
+    @extend %error1;
+    border: 1px solid #ff0;
+}
+
+//8. 在error下并行还有instrucsion，则serious-error也会一并继承。也会继承.error .pic。
+//但serous-error 不可写成这样的继承：@extend .error .pic ,即不可继承选择器序列。
+.error.instrucsion {
+    background-image: url("/images/hacked.png");
+}
+
+.error .pic {
+    background-image: url("/images/pic.png");
+}
+
+//9. 当写继承选择器时，页面不需要显示时，使用%，用来构建只用来继承的选择器。
+%error1 {
+    color: green;
+}
+
+.web {
+    @include col-sm(78);
+}
+
+
+/* @import "compass/reset!"  */

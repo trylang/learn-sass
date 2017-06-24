@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* mixin函数集中存储文件 */
+/* 存放变量，文件以下划线开头不会被编译到css文件中，在主文件引入此局部文件时，需要去掉下划线，并需要import声明提前*/
+/* normalize模块中的version,如果需要引入normalize子模块，就需要先引入-version */
+/* normalize模块中的base */
+/*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
+/* line 11, ../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* line 19, ../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+body {
+  margin: 0; }
+
+/* normalize模块中的html5 */
+/*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+/* line 9, ../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/* line 29, ../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+/* line 40, ../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/* line 47, ../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+[hidden],
+template {
+  display: none; }
+
+/* normalize模块中的links */
+/*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
+/* line 9, ../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
+a {
+  background: transparent; }
+
+/* line 15, ../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* line 26, ../sass/screen.scss */
+.headline {
+  font-family: Braggadocio, Arial, Verdana, Helvetica, sans-serif; }
+
+/* line 30, ../sass/screen.scss */
+.main-sec {
+  font-family: Arial, Verdana, Helvetica, sans-serif; }
+
+/*.main-sec {
+    .headline {
+        @include height();
+        font: {
+            family: $headline-ff;
+            size: 12px;
+        }
+    }
+    font: {
+        family: $main-sec-ff;
+        size: 16px;
+    }
+}*/
+/* line 50, ../sass/screen.scss */
+.main-sec {
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  font-size: 16px; }
+  /* line 56, ../sass/screen.scss */
+  .main-sec-headline {
+    height: 50px;
+    font-family: Braggadocio, Arial, Verdana, Helvetica, sans-serif;
+    font-size: 12px; }
+
+  /* line 64, ../sass/screen.scss */
+  .main-sec-detail {
+    height: 20px; }
+  /* line 69, ../sass/screen.scss */
+  .main-sec .main-sec-detail1 {
+    height: 21px; }
+
+/* line 77, ../sass/screen.scss */
+a :hover {
+  color: blue; }
+
+/* line 84, ../sass/screen.scss */
+a:hover {
+  color: blue; }
+
+/* line 89, ../sass/screen.scss */
+.webdemo-sec {
+  width: 50%;
+  float: left;
+  height: 30px; }
+
+/* line 9, ../sass/_mixin.scss */
+.col-6 {
+  width: 50%;
+  float: left; }
+
+/* line 98, ../sass/screen.scss */
+.error {
+  color: #f00; }
+
+/* line 103, ../sass/screen.scss */
+.serous-error {
+  border: 1px solid #ff0; }
+
+/* line 111, ../sass/screen.scss */
+.error.instrucsion {
+  background-image: url("/images/hacked.png"); }
+
+/* line 115, ../sass/screen.scss */
+.error .pic {
+  background-image: url("/images/pic.png"); }
+
+/* line 120, ../sass/screen.scss */
+.serous-error {
+  color: green; }
+
+@media (min-width: 768px) {
+  /* line 124, ../sass/screen.scss */
+  .web {
+    width: 78%;
+    float: left; } }
+
+/* @import "compass/reset!"  */
